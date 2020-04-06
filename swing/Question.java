@@ -14,7 +14,7 @@ package com.jse.swing;
 50점 미만이면 F 학점입니다
 라고 출력되게 해주세요
  * */
-public class Quetion {
+public class Question {
 	private String name;
 	private int korean;
 	private int math;

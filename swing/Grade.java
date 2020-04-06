@@ -42,37 +42,37 @@ public class Grade {
 	public int getMath() {
 		return math;
 	}
-	public String score() {
-		String result="";
-		int average= (korean + english + math)/3;
-	//  int average= 	averagescore();
+	public String grade() {
+		String grade="";
+	//int average= (korean + english + math)/3;
+	 int average= 	average();
 		
 		if(average>=90) {
-			result="A .";	
+			grade="A .";	
 		} else if(average>=80) {
-			result="B ";
+			grade="B ";
 		} else if(average>=70) {
-			result="C ";
+			grade="C ";
 		} else if(average>=60) {
-			result="D ";
+			grade="D ";
 		} else if(average>=50) {
-			result="E ";
+			grade="E ";
 		} else if(average<50) {
-			result="F";
+			grade="F";
 		} else {
-			result="잘못 입력된 값입니다.";
+			grade="잘못 입력된 값입니다.";
 		}
-		return result;
+		return grade;
 	}
-	public int totalscore() {
-		int total= korean + english + math;
-		return total;
-	//	 return korean + english + math;
+	public int total() {
+	//	int total= korean + english + math;
+	//	return total;
+		 return korean + english + math;
 	}
-	public int averagescore() {
-		int average2=  (korean + english + math)/3;
-		return average2;
-	//	return totalscore()/3;  
+	public int average() {
+	//	int average2=  (korean + english + math)/3;
+	//	return average2;
+		return total()/3;  
 	}
 	
 }

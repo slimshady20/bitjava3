@@ -6,20 +6,27 @@ public class Engine {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		GradeBean[] grades = new GradeBean[3];
-		MemberBean[] members = new MemberBean[3];
+		GradeService gradeService = new GradeService();  // 아래줄이랑 결과 똑같음
+	//	GradeBean[] grades = new GradeBean[3];
+		MemberService memberService = new MemberService();
+	//	MemberBean[] members = new MemberBean[3];
 		while(true) {
 			System.out.println("0. 종료 1.성적표입력 2. 성적표출력 3.성적 순위 4. 회원가입 5. 회원 가입 정보 6.회원 나이순 ");
 			switch(scanner.nextInt()) {
 			case 0: System.out.println("종료"); return;
 			case 1: System.out.println("성적표");
 			
-			for(int i=0; i<3; i++) {
-				grades[i] = input(scanner);
+			for(int i=0; i< 3;i++) {
+				System.out.println("이름,국어,영어,수학  입력");
+				gradeService.add(new GradeBean(	scanner.next(),scanner.nextInt(),
+								scanner.nextInt(),
+								scanner.nextInt()));
 			}
 			break;
 			case 2:	
+				GradeBean[] grades = gradeService.getGrades();
 				for(int i=0; i<3; i++) {
+					GradeBean grade = grades[i];
 					System.out.println(String.format("[%s : 총점 %d점, * 평균%d점,학점 : %s]",
 							grades[i].getName(), 
 							grades[i].total(), 
@@ -29,18 +36,19 @@ public class Engine {
 				break;
 				case 3:
 				System.out.println("총점별로 1, 2, 3등 이름 나열하기");
-				for(int i=0; i<3; i++) {
-					
-					}
+				for(int i=0; i<3; i++) {}
 				break;
-				
 				case 4: 
-					System.out.println("회원 가입을 환영합니다.");
+					System.out.println("회원 가입을 해주세요.");
 					for(int i=0; i<3; i++) {
-						members[i] = join(scanner);
+					System.out.println("ID, 비밀번호, 이름, 나이 입력");
+					memberService.add(new MemberBean(scanner.next(),scanner.next(),
+					scanner.next(),scanner.nextInt()));
+			//			members[i] = join(scanner);
 					}
 				break;
 				case 5:
+					MemberBean[] members = MemberBean.getMembers();
 					for(int i=0; i<3; i++) {
 						System.out.println(String.format("아이디: %s, 비밀번호: %s, 이름: %s, 나이: %d",
 								members[i].getUserid(),

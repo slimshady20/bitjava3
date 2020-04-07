@@ -1,15 +1,15 @@
 package com.jse.swing;
 
 public class Ban {
-	private Grade[] grades;
+	private GradeBean[] grades;
 	public Ban() {
-		grades= new Grade[100];
+		grades= new GradeBean[100];
 		
 	}
-	public void setGrades(Grade[] grade) {
+	public void setGrades(GradeBean[] grades) {
 		this.grades= grades;
 	}
-	public Grade[] getGrades() {
+	public GradeBean[] getGrades() {
 		return grades;
 	}
 }

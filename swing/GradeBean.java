@@ -11,11 +11,20 @@ package com.jse.swing;
  *   50점 이상이면 E 
  *   50점 미만이면 F 학점입니다라고 출력되게 해주세요
  */
-public class Grade {
-	private String name;
+public class GradeBean {
+	private String name; 
 	private int korean;
 	private int english;
 	private int math;
+	
+	
+	public GradeBean(String name, int korean, int english, int math) {   //default constructor 생성자
+		  this.name=name;
+		  this.korean= korean;
+		  this.english= english;
+		  this.math = math;
+	}
+	
 	
 	public void setName(String name) {
 		this.name = name;

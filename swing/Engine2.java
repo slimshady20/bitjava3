@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine2 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Grade[] grades = new Grade[3];
+		GradeBean[] grades = new GradeBean[3];
 		
 		while(true) {
 			System.out.println("0. 종료 1. 성적표 입력 2. 성적표 출력");
@@ -32,8 +32,8 @@ public class Engine2 {
 	}
 	
 
-	public static Grade input(Scanner scanner) {
-		Grade grade = new Grade();
+	public static GradeBean input(Scanner scanner) {
+		GradeBean grade = new GradeBean();
 		System.out.println("이름");
 		grade.setName(scanner.next());
 		System.out.println("국어");

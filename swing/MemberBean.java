@@ -1,10 +1,17 @@
 package com.jse.swing;
 
-public class Member {
+public class MemberBean {
 	private String userid;
 	private String passwd;
 	private String name;
 	private int age;
+	
+	public MemberBean(String userid,String passwd,String name,int age) {
+		this.userid = userid;
+		this.passwd = passwd;
+		this.name= name;
+		this.age=age;
+	}
 	
 	public void setUserid(String userid) {
 		this.userid = userid;
@@ -29,5 +36,5 @@ public class Member {
 	}
 	public int getAge() {
 		return age;
-	}
+	} 
 }

@@ -6,8 +6,8 @@ public class Engine {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Grade[] grades = new Grade[3];
-		Member[] members = new Member[3];
+		GradeBean[] grades = new GradeBean[3];
+		MemberBean[] members = new MemberBean[3];
 		while(true) {
 			System.out.println("0. 종료 1.성적표입력 2. 성적표출력 3.성적 순위 4. 회원가입 5. 회원 가입 정보 6.회원 나이순 ");
 			switch(scanner.nextInt()) {
@@ -49,26 +49,28 @@ public class Engine {
 								members[i].getAge()));
 					}
 					break;
+				case 6:
+					
+					break;
 				}
 			}
 		
 		}
 	
-	public static Grade input(Scanner scanner) {
-		Grade grade = new Grade();
-		System.out.println("이름");
-		grade.setName(scanner.next());
-		System.out.println("국어");
-		grade.setKorean(scanner.nextInt());
-		System.out.println("영어");
-		grade.setEnglish(scanner.nextInt());
-		System.out.println("수학");
-		grade.setMath(scanner.nextInt());
-		return grade;
-	}
-	public static Member join(Scanner scanner) {
-		Member member = new Member();
-		System.out.println("아이디");
+	public static GradeBean input(Scanner scanner) { //Grade 가 return type
+		//Grade grade = new Grade(Scanner scanner) {//new Grade(); 는 argument가 필요함 그래서 
+			System.out.println("이름, 국어 ,영어 ,수학 입력");
+			return new GradeBean(scanner.next(),
+					scanner.nextInt(),scanner.nextInt(),scanner.nextInt());
+		}; 
+	//	return grade; // main에 grade값 주려고 return줌
+	
+	public static MemberBean join(Scanner scanner) {
+	//	Member member = new Member();
+		System.out.println("ID, 비밀번호, 이름, 나이 입력");
+		return new MemberBean(scanner.next(),scanner.next(),scanner.next(),scanner.nextInt());
+		
+	/*	System.out.println("아이디");
 		member.setUserid(scanner.next());
 		System.out.println("비밀번호");
 		member.setPasswd(scanner.next());
@@ -76,7 +78,7 @@ public class Engine {
 		member.setName(scanner.next());
 		System.out.println("나이");
 		member.setAge(scanner.nextInt());
-		return member;
+		return member; */
 	}
 	 // 파라미터에 넣으면 위에 scanner 데리고옴
 		

@@ -2,10 +2,18 @@ package com.jse.inheritance;
 
 public class PhoneService {
 	private Phone[] phones;  // 선언하는것이기떄문에 Phone[]안에 값넣지않는다. 
+	private CellPhone[] cellPhones;
+	private Iphone[] iphones;
+	private GalaxyNote[] galaxyNotes;
 	public int count;			// 8. count 만들어주고  초기화해야해서
+	
 	public PhoneService() {    
 		phones = new Phone[3];		//
+		cellPhones= new CellPhone[3];
+		iphones= new Iphone[3];
+		galaxyNotes= new GalaxyNote[3];
 		count=0;					//9. 초기화
+		
 	}
 	public int getCount() {
 		return count;
@@ -24,4 +32,41 @@ public class PhoneService {
  								// 7. phones[0] =phone; 3번 반복해야하니 증가해야되겠구나 
 		count++;				// 10. 1씩 증가해야하니 count++; 추가
 	}
+	
+	
+	public CellPhone[] getCellPhones() {
+		return cellPhones;
+	}
+	public void setCellPhones(CellPhone[] cellPhones) {
+		this.cellPhones = cellPhones;
+	}
+	public void addCellPhone(CellPhone cellPhone) {
+		cellPhones[count] = cellPhone;
+		count++;
+	}
+	
+	
+	public Iphone[] getIphones() {
+		return iphones;
+	}
+	public void setIphones(Iphone[] iphones) {
+		this.iphones = iphones;
+	}
+	public void addIphone(Iphone iphone ) {
+		iphones[count]= iphone;
+		count++;
+	}
+	
+	public GalaxyNote[] getGalaxyNotes() {
+		return galaxyNotes;
+	}
+	public void setGalaxyNotes(GalaxyNote[] galaxyNotes) {
+		this.galaxyNotes = galaxyNotes;
+	}
+	public void addGalaxyNote(GalaxyNote galaxyNote) {
+		galaxyNotes[count]= galaxyNote;
+		count++;
+	}
+
+	
 }

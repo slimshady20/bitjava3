@@ -4,10 +4,12 @@ public class Phone {
 	private String phoneNumber;
 	private String name;
 	private String company;
+	
 	public Phone(String phoneNumber, String name, String company) {  //4. must에 line 16 다 일일이 넣기 귀찮아서 이렇게생성
 		this.phoneNumber=phoneNumber;
 		this.name=name;
 		this.company=company;
+		
 	}
 	public String getPhoneNumber() {
 		return phoneNumber;

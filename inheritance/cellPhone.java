@@ -1,6 +1,6 @@
 package com.jse.inheritance;
 
-public class cellPhone extends Phone {   
+public class CellPhone extends Phone {   
 	private boolean portable;
 	private String move;
 	
@@ -10,9 +10,10 @@ public class cellPhone extends Phone {
 	public void setMove(String move) {
 		this.move = move;
 	}
-	public cellPhone(String phoneNumber, String name, String company,boolean portable) {
+	public CellPhone(String phoneNumber, String name, String company,boolean portable) {
 		super(phoneNumber, name, company);
-		this.portable=portable;
+	//	this.portable=portable;
+		setPortable(portable);       
 }
 
 	public boolean isPortable() {

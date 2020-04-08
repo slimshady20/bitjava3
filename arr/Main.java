@@ -13,7 +13,8 @@ public class Main {
 		//		CardBean card = new CardBean(scanner.next(),scanner.nextInt());	// 3.
 						
 		//		service.add(card); 											//4.
-				service.add(new CardBean(scanner.next(),scanner.nextInt())); //8.
+				service.add(new CardBean(scanner.next(),
+						scanner.nextInt())); //8.
 			}
 			break;
 			

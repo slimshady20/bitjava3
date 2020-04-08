@@ -3,10 +3,9 @@ package com.jse.arr;
 public class CardBean {
 	private String kind;
 	private int number;
-	
 	public CardBean(String kind, int number) {
-		this.kind=kind;
-		this.number= number;
+		this.kind = kind;
+		this.number = number;
 	}
 	
 	public void setKind(String kind) {
@@ -16,9 +15,10 @@ public class CardBean {
 		return kind;
 	}
 	public void setNumber(int number) {
-		this.number= number;
+		this.number=number;
 	}
 	public int getNumber() {
 		return number;
 	}
 }
+

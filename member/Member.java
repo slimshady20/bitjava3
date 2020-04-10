@@ -4,11 +4,7 @@ import lombok.Data;
 @Data
 
 public class Member {
-	private String userid;
-	private String passwd;
-	private String name;
-	private int age;
-	
+	private String userid,passwd,name,ssn;
 	
 	/* public Member() {
 		// TODO Auto-generated constructor stub

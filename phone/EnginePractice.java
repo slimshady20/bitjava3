@@ -13,7 +13,7 @@ public class EnginePractice {
 		case 1: System.out.println("전화번호, 이름, 회사 입력"); 							// 4. syso 입력
 			for(int i=0; i<3;i++) {															// 6. for문 입력
 					
-				service.add(new Phone(scanner.next(),scanner.next(),scanner.next()));  // 3. add phone 5. 이것을 3번해야하니까
+//				service.add(new Phone(scanner.next(),scanner.next(),scanner.next()));  // 3. add phone 5. 이것을 3번해야하니까
 			}
 		break;
 		case 2:

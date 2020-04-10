@@ -16,5 +16,7 @@ public class Constants {
 	
 	public final static String CARD_MENU= "0.Exit 1.카드 3장 받기 2.출력";
 	public final static String CARD_INPUT= "카드 3장 받기 모양, 숫자";
+	
+	public final static String GAME_MENU= "0. 종료 1. 회원가입 2. 로그인 3. 계산기 4. 가위바위보  5. 1부터 100까지 숫자합산 6  주사위 홀/ 짝 맞추기게임 7. 카우푸지수 구하기";
 }
 	

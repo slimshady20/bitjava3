@@ -1,22 +1,8 @@
 package com.jse.member;
 
+public interface MemberService {
+	public void setMembers(Member[] members);
+	public Member[] getMemebers();
+	public void add(Member member);
 
-public class MemberService {
-	private Member[] members;
-	private int count;
-	public MemberService() {
-		members = new Member[3];
-		count=0;
-	}
-	public void setMembers(Member[] members) {
-		this.members=members;
-	}
-	public Member[] getMembers() {
-		return members;
-	}
-	public void add(Member member) {
-		members[count]= member;
-		count++;
-		
-	}
 }

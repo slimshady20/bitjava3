@@ -69,7 +69,10 @@ public class PhoneService {
 		galaxyNotes[count]= phone;
 		count++;
 	}
-
+	public void add(CellPhone phone) {
+		cellPhones[count]=phone;
+		count++;
+	}
 	
 }
 /* 오버로딩

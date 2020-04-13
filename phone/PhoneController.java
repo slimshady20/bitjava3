@@ -9,6 +9,8 @@ public class PhoneController {
 		PhoneService service = new PhoneService();   // 2.PhoneServie쓰고 컨트롤 스페이스 다쓰고 phoneService 복붙해서 lin16에 그대로 복사
 		Phone phone = null;
 		CellPhone cellPhone = null;
+		Iphone iphone =null;
+		
 		String message="";
 		while(true) {
 			System.out.println();
@@ -27,7 +29,8 @@ public class PhoneController {
 		break;
 		case "2":
 			JOptionPane.showMessageDialog(null, service.getPhones()); break;
-			case "3": 
+			
+		case "3": 
 				for(int i=0;i<3;i++) {
 					String[] values=JOptionPane.showInputDialog(Constants.CELLPHONE_NEMU).split(",");
 					cellPhone = new CellPhone();
@@ -43,23 +46,27 @@ public class PhoneController {
 				
 			case "5":
 				for(int i=0;i<3;i++) {
-					String[] values3=JOptionPane.showInputDialog(Constants.IPHONE_NEMU).split(",");
-					service.add(new Iphone(values3[0],values3[1],values3[2],true,values3[3])); 
+					String[] values=JOptionPane.showInputDialog(Constants.IPHONE_NEMU).split(",");
+					iphone = new Iphone();
+					iphone.setPhoneNumber(values[0]);
+					iphone.setName(values[1]);
+					iphone.setCompany(values[2]);
+					iphone.setSearch(values[3]);
+					service.add(iphone); 
 				}
 				break;
 				case "6" :
-					Iphone[] iphones = service.getIphones();
+				/*	Iphone[] iphones = service.getIphones();
 					message = "";
 					for(int i=0; i<3; i++) {
 						message += iphones[i].toString()+"\n";
-						
-					}
-					JOptionPane.showMessageDialog(null, message);
-					break;
+					}*/
+					JOptionPane.showMessageDialog(null, service.getIphones()); break;
+				
 				case "7":
 					for(int i=0;i<3;i++) {
 						String[] values=JOptionPane.showInputDialog(Constants.GALAXY_NOTE_menu).split(",");
-						service.add(new GalaxyNote(values[0],values[1],values[2],true,values[3],values[4])); 
+			//			service.add(new GalaxyNote(values[0],values[1],values[2],true,values[3],values[4])); 
 					}
 				break;
 				case "8":

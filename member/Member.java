@@ -4,8 +4,8 @@ import lombok.Data;
 @Data
 
 public class Member {
-	private String userid,passwd,name,ssn;
-	
+	private String userid,passwd,name,ssn,addr;
+}	
 	/* public Member() {
 		// TODO Auto-generated constructor stub
 	}
@@ -40,4 +40,4 @@ public class Member {
 	public int getAge() {
 		return age;
 	} */
-}
+

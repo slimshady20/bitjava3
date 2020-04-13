@@ -9,17 +9,19 @@ public class MemberServiceImpl implements MemberService{
 	
 	@Override
 	public void setMembers(Member[] members) {
-		// TODO Auto-generated method stub
+		this.members = members;
 		
 	}
 	@Override
-	public Member[] getMemebers() {
-		// TODO Auto-generated method stub
-		return null;
+	public Member[] getMembers() {
+		return members;
 	}
 	@Override
 	public void add(Member member) {
-		// TODO Auto-generated method stub
+	//	System.out.println("서비스로 들어온 멤버");
+	//	System.out.println(member);
+		members[count] = member;
+		count++;
 		
 	}
 

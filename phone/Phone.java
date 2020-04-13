@@ -26,7 +26,7 @@ public class Phone {
 	class Iphone extends CellPhone {
 		private String search;
 
-		
+		/*	
 		public Iphone(String phoneNumber, String name, String company, boolean portable,String search) {
 //			super(phoneNumber, name, company, portable);
 			this.search= search;
@@ -41,10 +41,12 @@ public class Phone {
 		public String toString() {
 			
 			return super.toString()+ ", Serach = "+ search;
-		}
+		}*/
 	}
+@Data
 	class GalaxyNote extends Iphone {
 		private String bigSize;
+		/*
 		public GalaxyNote(String phoneNumber, String name, String company, boolean portable, String search,String bigSize) {
 			super(phoneNumber, name, company, portable, search);
 			this.bigSize=bigSize;
@@ -62,7 +64,7 @@ public class Phone {
 		public String toString() {
 			return super.toString()+", BigSize = "+ bigSize;
 		}
-
+*/
 		
 	}
 

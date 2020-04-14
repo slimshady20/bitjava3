@@ -1,7 +1,7 @@
 package com.jse.member;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,16 +9,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class JoinView extends JFrame implements ActionListener{
+public class MemberView extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	JLabel[] labels;
 	JTextField[] textFields; 
 	JPanel panel;
-	//JTextArea textarea;
+	JTextArea textArea;
 	JButton saveButton,listButton,loginButton;
 	MemberService memberService;
 	
-	public JoinView() {
+	public MemberView() {
 	memberService = new MemberServiceImpl();
 	}
 	public void open(){ //open()은 method
@@ -29,6 +29,7 @@ public class JoinView extends JFrame implements ActionListener{
 	this.setVisible(true);
 	labels = new JLabel[6];
 	textFields = new JTextField[6];
+	textArea= new JTextArea();
 	String[] names = {"이름","아이디" ,"패스워드","SSN","주소","검색결과"}; // new String[] {} 원래는이건데 new String 생략가능
 	for(int i=0; i<names.length;i++) {
 		labels[i] = new JLabel(names[i]);
@@ -37,7 +38,7 @@ public class JoinView extends JFrame implements ActionListener{
 		panel.add(textFields[i]);
 		
 	}
- 
+	
    saveButton = new JButton("저장");
    listButton = new JButton("목록");
    loginButton = new JButton("로그인");
@@ -47,7 +48,8 @@ public class JoinView extends JFrame implements ActionListener{
    panel.add(saveButton); 
    panel.add(listButton);
    panel.add(loginButton);
-  
+   panel.add(textArea);
+   
    labels[0].setBounds(40,10,40,40);
    labels[1].setBounds(40,50,40,40);
    labels[2].setBounds(40,90,60,40);
@@ -60,6 +62,7 @@ public class JoinView extends JFrame implements ActionListener{
    textFields[3].setBounds(120,130,280,30);
    textFields[4].setBounds(120,180,280,30);
    textFields[5].setBounds(120,220,280,150);
+   textArea.setBounds(120,220,280,150);
    saveButton.setBounds(125,400,80,30);
    listButton.setBounds(240,400,80,30);
    loginButton.setBounds(340,400,80,30);
@@ -71,7 +74,7 @@ public class JoinView extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 			
 		if(e.getSource() == saveButton) {
-			textFields[0].setText("홍길동,유관순,이순신,신사임당,세종대왕");
+			textFields[0].setText("홍길동,유관순,이순신,신사임당,세종대왕");									// nl
 			textFields[1].setText("Hong, You,Lee,Sin,Sae");
 			textFields[2].setText("1,1,1,1,1");
 			textFields[3].setText("900101-1,960101-2,011010-4,020606-3,123456-5"); 
@@ -84,14 +87,14 @@ public class JoinView extends JFrame implements ActionListener{
 			
 			String data= String.format("%s / %s / %s / %s / %s", 
 					textFields[0].getText(),
-					textFields[1].getText(),
+					textFields[1].getText(),					//nlp가 들어가는 과정
 					textFields[2].getText(),
 					textFields[3].getText(),
 					textFields[4].getText());
 		
 			
-			String[] arr = data.split("/");
-			Member[] members= new Member[5];
+			String[] arr = data.split("/");						// 스플릿이 발생해서 corpus로 쪼개어짐
+			Member[] members= new Member[5];		//2차원
 			String[] names = arr[0].split(",");
 			String[] userids = arr[1].split(",");
 			String[] passwds= arr[2].split(",");
@@ -99,35 +102,48 @@ public class JoinView extends JFrame implements ActionListener{
 			String[] addrs = arr[4].split(",");
 		
 			for(int i=0;i<5;i++) {
-				members[i]= new Member();
+				members[i]= new Member();			// member[i]의 하나가 Member m = new Member()  
 				members[i].setName(names[i]);
 				members[i].setUserid(userids[i]);
 				members[i].setPasswd(passwds[i]);
 				members[i].setSsn(ssns[i]);
 				members[i].setAddr(addrs[i]);
-				memberService.add(members[i]);
+				memberService.add(members[i]);			// 서버에 저장된공간을 write (set가됨)
 				
 			}
 		  }else if(e.getSource()==listButton) {
 				JOptionPane.showMessageDialog(this, "클릭 !!");
-				 Member[] members = memberService.getMembers();
-				 for(int i=0;i<members.length;i++) { 
-				System.out.println("화면 목록 결과");
-				System.out.println(members[i]);
-				
+				 Member[] members = memberService.getMembers();    	   // 서버에서 값을 가져온다. read하는것 (get이됨)
+				 												   		//
+				// for(int i=0;i<members.length;i++) { 		
+			//	System.out.println("화면 목록 결과");
+			//	System.out.println(members[i]);				// [i]가 한 차원을 낮춘다
+				 String result = "";
+					for(int i=0;i< members.length; i++) {
+						result += (members[i]+"\n");
+						}textFields[0].setText("");
+						textFields[1].setText("");
+						textFields[2].setText("");
+						textFields[3].setText("");
+						textFields[4].setText("");
+						textArea.setText(result);
+		  }
 				}	
-				 	textFields[0].setText("홍길동,왕");
-					textFields[1].setText("Hong, e");
-					textFields[2].setText("1,1,1,1,1");
-					textFields[3].setText("900106-3,123456-5"); 
-					textFields[4].setText("서울,산,대구");
-					textFields[5].setText("서울,산,대구");
+				 
+
+			
+				
+				
+		//		textFields[5].setText("검색결과"+
+          //       members2[0]+
+          //       members2[1]+
+          //       members2[2]+
+          //       members2[3]+
+          //       members2[4]);
 				 	
 				
 			}
-		}
-
-	}
+	
 
 
 
@@ -185,3 +201,4 @@ public class JoinView extends JFrame implements ActionListener{
 		//	JOptionPane.showMessageDialog(parentComponent, message);*/
 	
 
+			

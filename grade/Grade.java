@@ -17,7 +17,18 @@ import lombok.Data;
 @Data
 	public class Grade{
 	private String name;
-	private int korean,english,math;
+	private int korean,english,math, java;
+	
+	
+	
+	public String toString() {
+		return "korean"+ this.korean+ "english"+ this.english+ 
+				"math"+ this.math+ "java"+ this.java;
+	}
+//	String koreans = Integer.toString(korean);
+//	String englishs = Integer.toString(english);
+//	String maths = Integer.toString(math);
+//	String javas = Integer.toString(java);
 }
 /*public class Grade {
 	private String name; 

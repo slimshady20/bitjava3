@@ -4,7 +4,7 @@ import lombok.Data;
 @Data
 
 public class Member {
-	private String userid,passwd,name,ssn,addr;
+	private String userid,passwd,name,ssn,addr;			// 0Â÷¿ø
 }	
 	/* public Member() {
 		// TODO Auto-generated constructor stub

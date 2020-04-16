@@ -74,7 +74,7 @@ public class MemberView extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 			
 		if(e.getSource() == saveButton) {
-			textFields[0].setText("홍길동,유관순,이순신,신사임당,세종대왕");									// nl
+			textFields[0].setText("홍길동,유관순,이순신,신사임당,세종대왕");									// nl(Natural Language)
 			textFields[1].setText("Hong, You,Lee,Sin,Sae");
 			textFields[2].setText("1,1,1,1,1");
 			textFields[3].setText("900101-1,960101-2,011010-4,020606-3,123456-5"); 
@@ -87,7 +87,7 @@ public class MemberView extends JFrame implements ActionListener{
 			
 			String data= String.format("%s / %s / %s / %s / %s", 
 					textFields[0].getText(),
-					textFields[1].getText(),					//nlp가 들어가는 과정
+					textFields[1].getText(),					//nlp가 들어가는 과정 (natural language processing
 					textFields[2].getText(),
 					textFields[3].getText(),
 					textFields[4].getText());
@@ -113,7 +113,7 @@ public class MemberView extends JFrame implements ActionListener{
 			}
 		  }else if(e.getSource()==listButton) {
 				JOptionPane.showMessageDialog(this, "클릭 !!");
-				 Member[] members = memberService.getMembers();    	   // 서버에서 값을 가져온다. read하는것 (get이됨)
+				 Member[] members = memberService.list();    	   // 서버에서 값을 가져온다. read하는것 (get이됨)
 				 												   		//
 				// for(int i=0;i<members.length;i++) { 		
 			//	System.out.println("화면 목록 결과");

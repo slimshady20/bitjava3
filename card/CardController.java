@@ -7,7 +7,7 @@ import com.jse.util.Constants;
 public class CardController {
 	public static void main(String[] args) {
 	//	Scanner scanner = new Scanner(System.in);
-		CardService service = new CardService();		//CardService 타입 클래스가x 클래스는 CardController 이다.
+		CardService service = new CardServiceImpl();		//CardService 타입 클래스가x 클래스는 CardController 이다.
 		Card card= null;			//Card 는 타입
 		
 		while(true) {
@@ -24,7 +24,7 @@ public class CardController {
 			}
 			break;
 			case "2": 
-				JOptionPane.showMessageDialog(null,service.getCards());	// service 인스턴스변수 getcards() 인스턴스매소드
+				JOptionPane.showMessageDialog(null,service.list());	// service 인스턴스변수 getcards() 인스턴스매소드
 			//	Card[] cards = service.getCards();
 				break;
 			}

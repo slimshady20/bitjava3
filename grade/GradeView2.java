@@ -161,7 +161,7 @@ public class GradeView2 extends JFrame implements ActionListener{
 		
 	else if(e.getSource() == listButton) {
 			JOptionPane.showMessageDialog(this, "목록클릭");
-			Grade[] grades = gradeService.getGrades();   //gradeService에서 Grade[] getGrades() 그래도 복붙가져오기
+			Grade[] grades = gradeService.list();   //gradeService에서 Grade[] getGrades() 그래도 복붙가져오기
 			String result = "";
 			for(int i=0; i<grades.length;i++) { // grades를 String으로 변환
 				result += grades[i]+"\n";

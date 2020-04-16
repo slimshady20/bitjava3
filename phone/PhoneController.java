@@ -6,7 +6,7 @@ public class PhoneController {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		PhoneService service = new PhoneService();   // 2.PhoneServie쓰고 컨트롤 스페이스 다쓰고 phoneService 복붙해서 lin16에 그대로 복사
+		PhoneService service = new PhoneServiceImpl();   // 2.PhoneServie쓰고 컨트롤 스페이스 다쓰고 phoneService 복붙해서 lin16에 그대로 복사
 		Phone phone = null;
 		CellPhone cellPhone = null;
 		Iphone iphone =null;
@@ -28,7 +28,7 @@ public class PhoneController {
 			}
 		break;
 		case "2":
-			JOptionPane.showMessageDialog(null, service.getPhones()); break;
+			JOptionPane.showMessageDialog(null, service.list()); break;
 			
 		case "3": 
 				for(int i=0;i<3;i++) {
@@ -41,7 +41,7 @@ public class PhoneController {
 				}
 				break;
 			case "4": 
-				JOptionPane.showMessageDialog(null,service.getCellPhones());break;
+				JOptionPane.showMessageDialog(null,service.cList());break;
 				
 				
 			case "5":
@@ -61,7 +61,7 @@ public class PhoneController {
 					for(int i=0; i<3; i++) {
 						message += iphones[i].toString()+"\n";
 					}*/
-					JOptionPane.showMessageDialog(null, service.getIphones()); break;
+					JOptionPane.showMessageDialog(null, service.IphoneList()); break;
 				
 				case "7":
 					for(int i=0;i<3;i++) {
@@ -70,13 +70,13 @@ public class PhoneController {
 					}
 				break;
 				case "8":
-					GalaxyNote[] galaxyNotes =service.getGalaxyNotes();
-					message = "";
-					for(int i=0; i<3; i++) {
-						message += galaxyNotes[i].toString()+"\n";
-					}
-					JOptionPane.showMessageDialog(null, message);
-				break;
+					JOptionPane.showMessageDialog(null,service.galaxyNotelist());break;
+		//		message = "";                         		74~79 수정하기
+			//		for(int i=0; i<3; i++) {
+			//			message += galaxyNotes[i].toString()+"\n";
+			//		}
+			//		JOptionPane.showMessageDialog(null, message);
+			//	break;
 		}
 		}
 	}

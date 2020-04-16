@@ -1,7 +1,45 @@
 package com.jse.phone;
 
-public class PhoneService {
-	private Phone[] phones;  // 선언하는것이기떄문에 Phone[]안에 값넣지않는다. 
+public interface PhoneService {
+	public void add(Phone phone);
+	public Phone list();
+	public Phone detail(Phone phone);
+	public int count();
+	public void update(Phone phone);
+	public void delete(Phone phone);
+	
+	
+	public void add(CellPhone cellphone);
+	public CellPhone cList();
+	public CellPhone detail(CellPhone cellphone);
+	public void update(CellPhone cellphone);
+	public void delete(CellPhone cellphone);
+	
+	
+	public void add(Iphone iphone);
+	public Iphone IphoneList();
+	public Iphone detail(Iphone iphone);
+	public void update(Iphone iphone);
+	public void delete(Iphone iphone);
+	
+	public void add(GalaxyNote galaxynote);
+	public GalaxyNote galaxyNotelist();
+	public GalaxyNote detail(GalaxyNote galaxynote);
+	public void update(GalaxyNote galaxynote);
+	public void delete(GalaxyNote galaxynote);
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*private Phone[] phones;  // 선언하는것이기떄문에 Phone[]안에 값넣지않는다. 
 	private CellPhone[] cellPhones;
 	private Iphone[] iphones;
 	private GalaxyNote[] galaxyNotes;
@@ -74,22 +112,9 @@ public class PhoneService {
 		count++;
 	}
 	
-}
+}*/
 /* 오버로딩
 public void add(Phone phone ) //	add는 똑같아도 상관없다 이름도 똑같아도 상관없다.	
 	iphones[count]= phone;
 	count++;
-}
-public void add(CellPhone phone ) {
-	iphones[count]= phone;
-	count++;
-}
-public void add(Iphone phone ) {
-	iphones[count]= phone;
-	count++;
-}
-public void addI(GalaxyNote phone ) {
-	iphones[count]= phone;
-	count++;
-}
 */

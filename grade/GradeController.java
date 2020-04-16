@@ -27,8 +27,8 @@ public class GradeController {
 			}
 			break;
 			case "2":	
-				JOptionPane.showMessageDialog(null, gradeService.printGrades());
-				System.out.println(gradeService.printGrades());break;
+				JOptionPane.showMessageDialog(null, gradeService.list());
+				System.out.println(gradeService.list());break;
 			case "3":
 				String[] values= JOptionPane.showInputDialog(Constants.GRADE_RANKING).split(",");
 				grade = new Grade();
